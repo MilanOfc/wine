@@ -7,9 +7,8 @@ from collections import defaultdict
 
 parser = argparse.ArgumentParser('wine store site\n')
 parser.add_argument('filename', default='wine.xlsx', nargs='?',
-                        help='name of the file, that contains description of wines')
+                    help='name of the file, that contains description of wines')
 args = parser.parse_args()
-
 
 env = Environment(
     loader=FileSystemLoader('.'),
@@ -33,7 +32,6 @@ drinks_by_category = defaultdict(list)
 for drink in drinks.to_dict(orient='records'):
     drinks_by_category[drink['category']].append(drink)
 
-
 render_page = template.render(
     winery_age=winery_age,
     year_name=age,
@@ -42,7 +40,6 @@ render_page = template.render(
 
 with open('index.html', 'w', encoding='utf8') as file:
     file.write(render_page)
-
 
 server = HTTPServer(('0.0.0.0', 8000), SimpleHTTPRequestHandler)
 server.serve_forever()
