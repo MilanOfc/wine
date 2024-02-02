@@ -121,17 +121,17 @@
           {% for drink in drinks_by_category[category] %}
           <div class="col-lg-4 mb-5 col-md-6">
             <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src= {{'images/' + drink.Картинка }} alt="Image" class="img-fluid">
-              {% if drink.Акция %}
+              <img src= {{'images/' + drink.picture }} alt="Image" class="img-fluid">
+              {% if drink.promotion %}
               <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
               {% endif %}
               <div>
-                <h3 class="heading mt-3 mb-3 text-dark">{{ drink.Название }}</h3>
-                {% if drink.Сорт %}
+                <h3 class="heading mt-3 mb-3 text-dark">{{ drink.name }}</h3>
+                {% if drink.variety %}
                 <p>
-                  Сорт винограда - {{ drink.Сорт }}<br/>
+                  Сорт винограда - {{ drink.variety }}<br/>
                   {% endif %}
-                  <span class="price">{{ drink.Цена }} р.</span>
+                  <span class="price">{{ drink.price }} р.</span>
                 </p>
 
               </div>
