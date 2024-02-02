@@ -19,7 +19,7 @@ template = env.get_template('template.html')
 winery_age = utils.get_age()
 age = utils.get_correct_year_name(winery_age)
 
-eng_column = {
+eng_columns = {
     'Категория': 'category',
     'Название': 'name',
     'Сорт': 'variety',
