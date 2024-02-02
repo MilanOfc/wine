@@ -27,7 +27,7 @@ eng_columns = {
     'Картинка': 'picture',
     'Акция': 'promotion'
 }
-drinks = pandas.read_excel(args.filename, keep_default_na=False).rename(columns=eng_column)
+drinks = pandas.read_excel(args.filename, keep_default_na=False).rename(columns=eng_columns)
 drinks_by_category = defaultdict(list)
 for drink in drinks.to_dict(orient='records'):
     drinks_by_category[drink['category']].append(drink)
