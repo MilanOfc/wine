@@ -37,7 +37,7 @@ if __name__ == '__main__':
     render_page = template.render(
         winery_age=winery_age,
         year_name=age,
-        drinks_by_category=utils.sort_dict(drinks_by_category)
+        drinks_by_category=dict(sorted(drinks_by_category.items()))
     )
 
     with open('index.html', 'w', encoding='utf8') as file:

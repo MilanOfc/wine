@@ -14,10 +14,3 @@ def get_correct_year_name(age):
     if age % 10 in [2, 3, 4]:
         return 'года'
     return 'лет'
-
-
-def sort_dict(some_dict):
-    my_keys = list(some_dict.keys())
-    my_keys.sort()
-    sorted_dict = {key: some_dict[key] for key in my_keys}
-    return sorted_dict
